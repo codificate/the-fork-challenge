@@ -9,7 +9,7 @@ class Api {
 
     init {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://dummyapi.io/data/v1/")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -17,6 +17,10 @@ class Api {
     }
 
     companion object {
+
+        private const val BASE_URL = "https://dummyapi.io/data/v1/"
+        const val API_APP_ID = "61d9b2e753adab3ce8ab8176"
+
         @JvmStatic
         fun instance(): Api = Api()
     }

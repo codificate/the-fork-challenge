@@ -5,7 +5,7 @@
     <application>
 
         <activity
-            android:name="com.thefork.challenge.user.UserActivity"
+            android:name=".UserActivity"
             android:label="Profile"
             android:theme="@style/AppTheme.NoActionBar"/>
 
