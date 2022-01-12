@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="user_toolbar">#00306A</color>
+    <color name="user_name">#000</color>
+    <color name="user_job">#AEAEAE</color>
+    <color name="user_label">#505050</color>
+    <color name="user_information_value">#000</color>
+    <color name="contact_label">#505050</color>
+</resources>

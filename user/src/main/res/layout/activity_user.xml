@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:id="@+id/user_banner_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/user_banner"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar_profile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:id="@+id/user_picture"
+        app:layout_constraintTop_toBottomOf="@+id/user_banner_background"
+        app:layout_constraintBottom_toBottomOf="@+id/user_banner_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/user_picture"/>
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/user_picture"
+        app:layout_constraintTop_toBottomOf="@id/user_picture"
+        app:layout_constraintStart_toStartOf="@id/user_picture"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textColor="@color/user_name"
+        tools:text="Jesse Smith"/>
+
+    <TextView
+        android:id="@+id/user_job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/user_name"
+        app:layout_constraintTop_toBottomOf="@id/user_name"
+        app:layout_constraintStart_toStartOf="@id/user_name"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="@color/user_job"
+        tools:text="Senior Accountant"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/user_screen_divisor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/user_start_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/user_end_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/user_top_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/user_bottom_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="16dp" />
+
+    <TextView
+        android:id="@+id/contact_information_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/contact_label"
+        android:layout_marginTop="16dp"
+        android:text="@string/contact_information_label"
+        app:layout_constraintTop_toBottomOf="@id/user_screen_divisor"
+        app:layout_constraintStart_toEndOf="@id/user_start_guideline"
+        android:textAllCaps="true"/>
+
+    <View
+        android:id="@+id/user_information_top_divisor"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="#AEAEAE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact_information_label"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/user_information_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintEnd_toEndOf="@id/user_end_guideline"
+        app:layout_constraintStart_toStartOf="@id/user_start_guideline"
+        app:layout_constraintTop_toTopOf="@id/user_information_top_divisor"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@id/user_information_bottom_divisor"/>
+
+    <View
+        android:id="@+id/user_information_bottom_divisor"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#AEAEAE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/user_bottom_guideline"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
